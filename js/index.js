@@ -1,7 +1,7 @@
 function Timer(Element, Time, Name){
 	var element =	Element, time = Time, originalTime = Time, name = Name;
-  // Sound notification, buffers automatically
-  var sound = new Audio("./assets/alarm.wav");
+        // Sound notification, buffers automatically
+    var sound = new Audio("./assets/alarm.wav");
 
 	var interval	=	setInterval(timeCallBack, 1000);
 	var isPaused	=	false;
@@ -49,8 +49,10 @@ function Timer(Element, Time, Name){
 
     // when timer ends
 	function onEnd(){
-    // Play Sound notification
-    sound.play();
+    // Play Sound Notification
+        sound.play();
+    // Pop-Up Prompt to Alert     
+        window.alert(name + " Ready");
     // resets clock
 		clearInterval(interval);
 		isPaused	=	true;
@@ -64,8 +66,8 @@ function Timers(Element){
 
 
 	this.addTimer	=	function(){
-		var name 	=	prompt("What is The Name of Your Timer");
-		var time 	=	prompt("Enter The Length of Your Timer (In Minutes)");
+		var name 	=	prompt("Timer Name ");
+		var time 	=	prompt("Timer Length (In Minutes)");
 
 		name 		=	name || "Timer " + (timers.length + 1);
 
